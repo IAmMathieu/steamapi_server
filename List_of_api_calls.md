@@ -256,7 +256,14 @@ _GetRecentlyPlayedGames returns a list of games a player has played in the last 
   - playtime_forever
     - The total number of minutes played "on record", since Stean began tracking total playtime in early 2009
   - img_icon_url, img_logo_url
-    - hese are the filenames of various images for the game. To construct the URL to the image, use this format: http://media.steampowered.com/steamcommunity/public/images/apps/{appid}/{hash}.jpg. For example, the TF2 logo is returned as "07385eb55b5ba974aebbe74d3c99626bda7920b8"
+    - These are the filenames of various images for the game. To construct the URL to the image, use this format: http://media.steampowered.com/steamcommunity/public/images/apps/{appid}/{hash}.jpg. For example, the TF2 logo is returned as "07385eb55b5ba974aebbe74d3c99626bda7920b8"
+  - playtime_windows_forever
+    - Same as playtime_forever but time played on Windows Plateform
+  - playtime_mac_forever
+    - Same as playtime_forever but time played on Mac Plateform (if mac is natively supported by game)
+  - playtime_linux_forever
+    - Same as playtime_forever but time played on Linux Plateform (if linux is natively supported by game)
+
 
 ## Games
 

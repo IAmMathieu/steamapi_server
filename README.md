@@ -23,3 +23,5 @@ For a prod environment
 ---
 
 All the calls made, with arguments and results, are listed in [List_of_api_calls.md](List_of_api_calls.md)
+
+All game ID can be found [here](https://steamdb.info/)
