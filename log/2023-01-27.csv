@@ -1,0 +1,7 @@
+11:39:30,/pop,This url cannot be found
+11:39:30,/favicon.ico,This url cannot be found
+11:41:13,/api/gps,ReferenceError: data is not defined
+11:42:24,/api/gps,ReferenceError: userData is not defined
+11:59:43,/api/user/frienlist,This url cannot be found
+12:00:48,/api/user/friendlist,SyntaxError: Unexpected token < in JSON at position 0
+12:01:14,/api/user/friendlist,TypeError: Cannot read properties of undefined (reading 'players')
