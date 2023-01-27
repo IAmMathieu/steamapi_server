@@ -5,3 +5,4 @@
 11:59:43,/api/user/frienlist,This url cannot be found
 12:00:48,/api/user/friendlist,SyntaxError: Unexpected token < in JSON at position 0
 12:01:14,/api/user/friendlist,TypeError: Cannot read properties of undefined (reading 'players')
+13:36:39,/api/app/news,TypeError: method is not a function

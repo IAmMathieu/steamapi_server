@@ -202,6 +202,48 @@ _GetOwnedGames returns a list of games a player owns along with some playtime in
 
 #### Result Data
 
+- game_count
+  - the total number of games the user owns (including free games they've played, if include_played_free_games was passed)
+- A games array, with the following contents (note that if "include_appinfo" was not passed in the request, only appid, playtime_2weeks, and playtime_forever will be returned):
+  - appid
+    - Unique identifier for the game
+  - name
+    - The name of the game
+  - playtime_2weeks
+    - The total number of minutes played in the last 2 weeks
+  - playtime_forever
+    - The total number of minutes played "on record", since Stean began tracking total playtime in early 2009
+  - img_icon_url, img_logo_url
+    - hese are the filenames of various images for the game. To construct the URL to the image, use this format: http://media.steampowered.com/steamcommunity/public/images/apps/{appid}/{hash}.jpg. For example, the TF2 logo is returned as "07385eb55b5ba974aebbe74d3c99626bda7920b8"
+  - has_community_visible_stats
+    - indicates there is a stats page with achievements or other game stats available for this game. The uniform URL for accessing this data is http://steamcommunity.com/profiles/{steamid}/stats/{appid}. For example, Robin's TF2 stats can be found at: http://steamcommunity.com/profiles/76561197960435530/stats/440. You may notice that clicking this link will actually redirect to a vanity URL like /id/robinwalker/stats/TF2
+
+### <ins>From GetRecentlyPlayedGames (v1)</ins>
+
+_GetRecentlyPlayedGames returns a list of games a player has played in the last two weeks, if the profile is publicly visible. Private, friends-only, and other privacy settings are not supported unless you are asking for your own personal details (ie the WebAPI key you are using is linked to the steamid you are requesting)_
+
+---
+
+> Arguments
+>
+> - key
+>   - steam api key
+> - steamid
+>   - 64 bit Steam ID to return friend list for
+> - count
+>   - Optionally limit to a certain number of games (the number of games a person has played in the last 2 weeks is typically very small)
+> - include_played_free_games
+> - format
+>   - Output format. json (default), xml or vdf
+>
+> Example:
+>
+> *http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=XXXXXXXXXXXXXXXXX&steamid=XXXXXXXXXXXXXXXXX&format=json*
+
+---
+
+#### Result Data
+
 - total_count
   - the total number of unique games the user has played in the last two weeks. This is mostly significant if you opted to return a limited number of games with the count input parameter
 - A games array, with the following contents:
