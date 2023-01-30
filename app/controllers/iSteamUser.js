@@ -19,9 +19,9 @@ const iSteamUser = {
       { method: "GET" }
     );
 
-    const userFriendList = await userFriendListFetch.json();
+    const userFriendListData = await userFriendListFetch.json();
 
-    res.status(200).send(userFriendList.friendslist);
+    res.status(200).send(userFriendListData.friendslist);
   },
 };
 

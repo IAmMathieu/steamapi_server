@@ -5,9 +5,9 @@ const iPlayerService = {
     
     const playedGamesFetch = await fetch(`http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${userSteamId}&count=${gamesCount}&format=json`);
 
-    const playedGames = await playedGamesFetch.json();
+    const playedGamesData = await playedGamesFetch.json();
 
-    res.status(200).send(playedGames.response);
+    res.status(200).send(playedGamesData.response);
   },
 };
 

@@ -9,9 +9,9 @@ const iSteamNews = {
       { method: "GET" }
     );
 
-    const appNews = await appNewsFetch.json();
+    const appNewsData = await appNewsFetch.json();
 
-    res.status(200).send(appNews);
+    res.status(200).send(appNewsData);
   },
 };
 
