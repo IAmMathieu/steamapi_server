@@ -1,6 +1,7 @@
 const iSteamUser = {
   async getPlayerSummaries(req, res) {
     const userSteamId = req.body.user_steam_id;
+    // const userSteamId = 76561198042858555;
     const userDataFetch = await fetch(
       `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_API_KEY}&steamids=${userSteamId}`,
       { method: "GET" }
