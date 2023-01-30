@@ -24,6 +24,8 @@ router.get(
   "/api/user/playedgames",
   routerWrapper(iPlayerService.getRecentlyPlayedGames)
 );
+router.get("/api/user/ownedgames", routerWrapper(iPlayerService.getOwnedGames));
+
 router.get(
   "/api/user/achievements",
   routerWrapper(iSteamUserStats.getPlayerAchievements)

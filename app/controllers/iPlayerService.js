@@ -18,6 +18,26 @@ const iPlayerService = {
       res.status(200).send(playedGamesData.response);
     }
   },
+
+  async getOwnedGames(req, res) {
+    const userSteamId = req.body.user_steam_id;
+    const includeAppInfo = req.body.include_app_info || true;
+    const includePlayedFreeGames = req.body.include_played_free_games || true;
+
+    const getOwnedGamesFetch = await fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${userSteamId}&include_appinfo=${includeAppInfo}&include_played_free_games=${includePlayedFreeGames}&format=json`);
+
+    const getOwnedGamesData = await getOwnedGamesFetch.json();
+
+    if (
+      getOwnedGamesData.response === undefined ||
+      Object.keys(getOwnedGamesData.response).length == 0
+    ) {
+      res.status(404).send("No Data found for this steamId");
+    } else {
+      res.status(200).send(getOwnedGamesData.response);
+    }
+
+  },
 };
 
 module.exports = iPlayerService;
