@@ -8,7 +8,14 @@ const iSteamUser = {
 
     const userData = await userDataFetch.json();
 
-    res.status(200).send(userData.response.players);
+    if (
+      userData.response.players === undefined ||
+      userData.response.players.length == 0
+    ) {
+      res.status(404).send("No Data found for this steamId");
+    } else {
+      res.status(200).send(userData.response.players);
+    }
   },
 
   async getFriendList(req, res) {
@@ -21,7 +28,14 @@ const iSteamUser = {
 
     const userFriendListData = await userFriendListFetch.json();
 
-    res.status(200).send(userFriendListData.friendslist);
+    if (
+      userFriendListData.friendslist === undefined ||
+      userFriendListData.friendslist.length == 0
+    ) {
+      res.status(404).send("No Data found for this steamId");
+    } else {
+      res.status(200).send(userFriendListData.friendslist);
+    }
   },
 };
 
