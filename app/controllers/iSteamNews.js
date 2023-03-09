@@ -12,7 +12,7 @@ const iSteamNews = {
     const appNewsData = await appNewsFetch.json();
 
     if (appNewsData === undefined || Object.keys(appNewsData).length == 0) {
-      res.status(404).send("No Data found for this appId");
+      res.status(404).send({"error":"No Data Found"});
     } else {
       res.status(200).send(appNewsData);
     }

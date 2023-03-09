@@ -41,7 +41,7 @@ _Returns basic profile information for a list of 64-bit Steam IDs_
   - The full URL of the player's 64x64 avatar
 - avatarfull
   - The full URL of the player's 184x184 avatar
-- personastate
+- personastateflags
   - The user's current status. 0 - offline, 1 - online, 2 - busy, 3 - away, 4 - Snooze, 5 - looking to trade, 6 - looking to play
 - communityvisibilitystate
   - Represents whether the profile is visible or not, 1 - private, 3 - public

@@ -9,7 +9,7 @@ const iSteamUserStats = {
     const globalAchPerData = await globalAchPerFetch.json();
 
     if (globalAchPerData === undefined || Object.keys(globalAchPerData).length == 0) {
-      res.status(404).send("No Data found for this gameId");
+      res.status(404).send({"error":"No Data Found"});
     } else {
       res.status(200).send(globalAchPerData);
     }
@@ -30,7 +30,7 @@ const iSteamUserStats = {
       playerAchievementsData === undefined ||
       Object.keys(playerAchievementsData).length == 0
     ) {
-      res.status(404).send("No Data found for this steamId");
+      res.status(404).send({"error":"No Data Found"});
     } else {
       res.status(200).send(playerAchievementsData);
     }
@@ -51,7 +51,7 @@ const iSteamUserStats = {
       getUserStatsForGameData === undefined ||
       Object.keys(getUserStatsForGameData).length == 0
     ) {
-      res.status(404).send("No Data found for this steamId");
+      res.status(404).send({"error":"No Data Found"});
     } else {
       res.status(200).send(getUserStatsForGameData);
     }

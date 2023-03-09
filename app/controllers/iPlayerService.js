@@ -13,7 +13,7 @@ const iPlayerService = {
       playedGamesData.response === undefined ||
       Object.keys(playedGamesData.response).length == 0
     ) {
-      res.status(404).send("No Data found for this steamId");
+      res.status(404).send({"error":"No Data Found"});
     } else {
       res.status(200).send(playedGamesData.response);
     }
@@ -32,7 +32,7 @@ const iPlayerService = {
       getOwnedGamesData.response === undefined ||
       Object.keys(getOwnedGamesData.response).length == 0
     ) {
-      res.status(404).send("No Data found for this steamId");
+      res.status(404).send({"error":"No Data Found"});
     } else {
       res.status(200).send(getOwnedGamesData.response);
     }
